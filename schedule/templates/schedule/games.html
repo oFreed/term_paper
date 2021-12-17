@@ -1,0 +1,26 @@
+{% extends 'schedule/base.html' %}
+{% load sorting_tags %}
+{% load static %}
+{% block content %}
+<body class="main_page">
+    <h1>List of the future games:</h1>
+    {% autosort object_list %}
+<tr>
+    <h4>Sort by <th>{% anchor date _("Date") %}</th>
+    Or <th>{% anchor result _("Result") %}</th>
+    </h4>
+</tr>
+<div class="main_page_div">
+        {% for game in object_list %}
+            <p>
+            <h1>{{game.title}}</h1>
+            <h4>It will be held on {{game.venue}}</h4>
+            <h4>At {{game.date}}</h4>
+            <h4>Result of the game: {{game.result}}</h4>
+        <a href="{{game.id}}" style="background-color:#4EB0B9;border-radius:3px;box-sizing:inherit;color:#fff;display:inline-block;font-size: 1.5rem;line-height:1.5;padding:7px 27px;text-decoration:none">Detail</a>
+
+            </p>
+        {% endfor %}
+</div>
+</body>
+{% endblock content %}

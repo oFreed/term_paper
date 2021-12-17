@@ -1,0 +1,22 @@
+{% extends 'schedule/base.html' %}
+{% load static %}
+{% load sorting_tags %}
+{% block content %}
+<body class="main_page">
+<div class="main_page_div">
+    <h1>List of players:</h1>
+    {% autosort object_list %}
+    <tr>
+    <h4>Sort by <th>{% anchor salary _("Salary") %}</th></h4>
+    </tr>
+        {% for player in object_list %}
+        <p>
+        <h1>{{player.name}} {{player.last_name}}</h1>
+        <h4>Date of birth: {{player.date_of_birth}}</h4>
+        <h4>Salary is: {{player.salary}}$</h4>
+    <a href="{{player.id}}" style="background-color:#4EB0B9;border-radius:3px;box-sizing:inherit;color:#fff;display:inline-block;font-size:1.5rem;line-height:1.5;padding:7px 27px;text-decoration:none">Detail</a>
+        </p>
+        {% endfor %}
+</div>
+</body>
+{% endblock content %}

@@ -1,0 +1,21 @@
+{% extends 'schedule/base.html' %}
+{% load static %}
+{% block content %}
+<body class="main_page">
+    <h1>Info about {{object.name}} {{object.last_name}}:</h1>
+<div class="main_page_div" style="padding-top:20px">
+        <p>
+        <h3>First name: {{player.name}}</h3>
+        <h3>Last name:{{player.last_name}}</h3>
+        <h4>Date of birth: {{player.date_of_birth}}</h4>
+        <h4>Salary is: {{player.salary}}$</h4>
+        {% if player.status %}
+            <h4>Status is: Active</h4>
+        {% else %}
+            <h4>Have a rest</h4>
+    {% endif %}
+        <h4>Heath status is: {{player.health_status}}</h4>
+     </p>
+</div>
+</body>
+{% endblock content %}

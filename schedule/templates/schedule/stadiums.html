@@ -1,0 +1,23 @@
+{% extends 'schedule/base.html' %}
+{% load static %}
+{% load sorting_tags %}
+{% block content %}
+<body class="main_page">
+    <h1>List of Stadiums:</h1>
+        {% autosort object_list %}
+    <tr>
+    <h4>Sort by <th>{% anchor number_of_seats _("Amounts of seats") %}</th></h4>
+    </tr>
+<div class="main_page_div">
+        {% for stadium in object_list %}
+        <p>
+        <h1>{{stadium.title}}</h1>
+        <h4>Contains {{stadium.number_of_seats}} seats</h4>
+        <h4>Price per place is: {{stadium.price_per_place}}</h4>
+        <a href="{{stadium.id}}" style="background-color:#4EB0B9;border-radius:3px;box-sizing:inherit;color:#fff;display:inline-block;font-size: 1.5rem;line-height:1.5;padding:7px 27px;text-decoration:none">Detail</a>
+
+        </p>
+        {% endfor %}
+</div>
+</body>
+{% endblock content %}

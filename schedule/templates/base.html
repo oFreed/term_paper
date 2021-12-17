@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Chat</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
+    <link rel="stylesheet" href="{% static 'assets/css/Header-Blue.css'%}">
+</head>
+<body>
+{% include 'include/header.html' %}
+        {% block content %}
+        {% endblock content %}
+{% include 'include/footer.html' %}
+</body>
+</html>

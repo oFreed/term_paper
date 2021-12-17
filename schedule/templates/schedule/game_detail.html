@@ -1,0 +1,23 @@
+{% extends 'schedule/base.html' %}
+{% load static %}
+{% block content %}
+<body class="main_page">
+    <h1>Info about {{object.name}} {{object.last_name}}:</h1>
+<div class="main_page_div" style="padding-top:20px">
+            <p>
+            <h1>{{game.title}}</h1>
+            <h3>Result of the game: {{game.result}}</h3>
+            <h4>It will be held on {{game.venue}}</h4>
+            <h4>At {{game.date}}</h4>
+            {% if game.players.all is None %}
+             <h5>Players arent chosen yet</h5>
+            {% else %}
+            <h4>Players in the game:</h4>
+            {% for player in game.players.all %}
+            <h5><li>{{player}}</li></h5>
+            {% endfor %}
+            {% endif %}
+            </p>
+</div>
+</body>
+{% endblock content %}

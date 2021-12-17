@@ -1,0 +1,13 @@
+{% extends 'schedule/base.html' %}
+{% load static %}
+{% block content %}
+<body class="main_page">
+    <h1>Detail of {{object.title}}:</h1>
+<div class="main_page_div">
+        <p>
+        <h2>Contains {{stadium.number_of_seats}} seats</h2>
+        <h2>Price per place is: {{stadium.price_per_place}}</h2>
+        </p>
+</div>
+</body>
+{% endblock content %}
